@@ -61,6 +61,12 @@ public class RomanNumeralsUtil {
         return true;
     }
 
+    /**
+     * Function:Takes the current integer array from given number.
+     * @param number
+     * @param array
+     * @param counter
+     */
     private void createNumberArray(int number, int [] array, int counter){
         int remainder = 0;
         int currentArray = 0;
@@ -73,6 +79,12 @@ public class RomanNumeralsUtil {
         }
     }
 
+    /**
+     * Function:Creates roman numeral string version of given number.
+     * Bug:Only goes up to thousands.
+     * @param builder
+     * @param numberArray
+     */
     private void createString(StringBuilder builder, int [] numberArray){
         int value = 0;
         //check the tens place of the original number through the array.
@@ -195,16 +207,12 @@ public class RomanNumeralsUtil {
             }
         }
     }
-    public StringBuilder correctFormat(StringBuilder romanNumber){
-        StringBuilder newNumber = new StringBuilder();
-        int counter = romanNumber.length()-1;
-        for(int i=0;i<romanNumber.length();i++){
-            newNumber.append(romanNumber.charAt(counter));
-            counter --;
-        }
-        return newNumber;
-    }
 
+    /**
+     * Function:Properly adds new numeral to the string builder.
+     * @param romanNumber
+     * @param numeral
+     */
     public void appendBeforeStringBuilder(StringBuilder romanNumber, String numeral){
         if(romanNumber.length()>0){
             StringBuilder newBuilder = new StringBuilder();

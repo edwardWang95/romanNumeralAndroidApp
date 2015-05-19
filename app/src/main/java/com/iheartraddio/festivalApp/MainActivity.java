@@ -22,15 +22,25 @@ public class MainActivity  extends ActionBarActivity {
         listView.setAdapter(new EventAdapter(this, list));
     }
 
+    /**
+     * Function:Creates labels to be placed into list view.
+     * @return
+     */
     private List<String> getEventLabels() {
         return Arrays.asList(
-                formatWithRomanNumeral(IHEART_FESTIVAL_LABEL, 772),
+                formatWithRomanNumeral(IHEART_FESTIVAL_LABEL, 12),
                 formatWithRomanNumeral(IHEART_FESTIVAL_LABEL, 2244),
                 formatWithRomanNumeral(IHEART_FESTIVAL_LABEL, 1243),
                 formatWithRomanNumeral(IHEART_FESTIVAL_LABEL, 772),
                 formatWithRomanNumeral(IHEART_FESTIVAL_LABEL, 123));
     }
 
+    /**
+     * Function:Returns a label of the new string.
+     * @param label
+     * @param number
+     * @return
+     */
     private String formatWithRomanNumeral(String label, int number) {
         final String possibleRomanNumeral = mRomanNumeralUtil.convertToRomanNumeral(number);
         if(!mRomanNumeralUtil.isValidRomanNumeral(possibleRomanNumeral)) {
